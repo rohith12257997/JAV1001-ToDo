@@ -33,12 +33,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //find view by id
         list_view = findViewById(R.id.list_view);
         arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, list);
         list_view.setAdapter(arrayAdapter);
 
-        //
+        //code for getting popmenu and getting the id for switch case
         list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-                //don't forgot this
+                //we referred https://developer.android.com/reference/android/widget/PopupMenu for popupmenu
                 popupMenu.show();
 
             }
